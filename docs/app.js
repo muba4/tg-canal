@@ -400,7 +400,7 @@ const app = (() => {
     commentsView.classList.add('hidden');
     feedMain.classList.remove('hidden');
     pullInd.classList.remove('hidden');
-    document.title = 'Грузчик из Шереметьево';
+    document.title = 'Лунная База. Новостная лента из TG';
   }
 
   function renderComment(c) {
@@ -424,7 +424,7 @@ const app = (() => {
     commentsEmpty.classList.add('hidden');
     commentsError.classList.add('hidden');
     commentsSpinner.classList.remove('hidden');
-    document.title = 'Комментарии — Грузчик из Шереметьево';
+    document.title = 'Лунная База. Новостная лента из TG.';
     window.scrollTo(0, 0);
 
     try {
