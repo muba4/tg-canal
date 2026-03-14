@@ -30,7 +30,7 @@ jobs:
               sent = await client.send_code_request(os.environ["PHONE"])
               session = client.session.save()
               print("Код отправлен в Telegram!")
-             ()
+              print()
               print(">>> Скопируй ЭТИ ДВЕ строки в Step 2 <<<")
               print()
               print("partial_session =", session)
