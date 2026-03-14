@@ -24,8 +24,17 @@ from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 from html.parser import HTMLParser
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+#logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+#log = logging.getLogger(__name__)
+# --- DISABLE LOGGING OUTPUT (for GitHub Actions) ---
+import logging
+# Disable all log output by setting level to CRITICAL and adding a null handler
 log = logging.getLogger(__name__)
+log.setLevel(logging.CRITICAL)  # or logging.ERROR if you still want errors (but we’ll suppress them too)
+# Add NullHandler to prevent "No handlers could be found" warning
+log.addHandler(logging.NullHandler())
+# --- END DISABLE LOGGING ---
+
 
 CHANNEL         = os.getenv("TELEGRAM_CHANNEL", "mb4ru")
 COMMENTS_GROUP  = os.getenv("TELEGRAM_COMMENTS_GROUP", "mb4rr")
