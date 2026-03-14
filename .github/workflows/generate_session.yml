@@ -29,7 +29,6 @@ jobs:
               await client.connect()
               sent = await client.send_code_request(os.environ["PHONE"])
               session = client.session.save()
-              # ⚠️ НИЧЕГО НЕ ВЫВОДИМ СЕКРЕТНЫЕ ДАННЫЕ!
               print("Код отправлен в Telegram!")
              ()
               print(">>> Скопируй ЭТИ ДВЕ строки в Step 2 <<<")
