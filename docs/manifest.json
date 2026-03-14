@@ -1,0 +1,19 @@
+{
+  "name": "Лунная База",
+  "short_name": "Лунная База",
+  "description": "Лента Telegram-канала Лунной Базы",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f0f2f5",
+  "theme_color": "#1B3A6B",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "icons/logo.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
