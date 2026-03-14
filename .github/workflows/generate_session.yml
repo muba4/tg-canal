@@ -22,9 +22,9 @@ jobs:
 
       - name: Send auth code and print session + hash
         env:
-          PHONE:    ${{ github.event.inputs.phone }}
-          API_ID:   ${{ github.event.inputs.api_id }}
-          API_HASH: ${{ github.event.inputs.api_hash }}
+          PHONE:    ${{ secrets.TELEGRAM_PHONE }}
+          API_ID:   ${{ secrets.TELEGRAM_API_ID }}
+          API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
         run: |
           python3 - << 'EOF'
           import asyncio, os
