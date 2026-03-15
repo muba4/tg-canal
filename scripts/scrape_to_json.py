@@ -571,8 +571,10 @@ def main():
                 )
         except Exception as e:
             #log.error(f"Telethon comments scraping failed (posts already saved): {e}")
+            pass
     else:
         #log.info("Telethon credentials not set — skipping comments scraping")
+        pass
 
 
 if __name__ == "__main__":
