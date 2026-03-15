@@ -12,15 +12,7 @@ on:
       code:
         description: 'Код из Telegram (5-6 цифр)'
         required: true
-      phone:
-        description: 'Тот же номер телефона что в Step 1'
-        required: true
-      api_id:
-        description: 'TELEGRAM_API_ID'
-        required: true
-      api_hash:
-        description: 'TELEGRAM_API_HASH'
-        required: true
+      # phone, api_id, api_hash больше не нужны в inputs
       password:
         description: 'Пароль 2FA (если включён, иначе оставь пустым)'
         required: false
@@ -38,9 +30,10 @@ jobs:
           PARTIAL_SESSION:  ${{ github.event.inputs.partial_session }}
           PHONE_CODE_HASH:  ${{ github.event.inputs.phone_code_hash }}
           CODE:             ${{ github.event.inputs.code }}
-          PHONE:            ${{ github.event.inputs.phone }}
-          API_ID:           ${{ github.event.inputs.api_id }}
-          API_HASH:         ${{ github.event.inputs.api_hash }}
+          # Берём из secrets:
+          PHONE:            ${{ secrets.TELEGRAM_PHONE }}
+          API_ID:           ${{ secrets.TELEGRAM_API_ID }}
+          API_HASH:         ${{ secrets.TELEGRAM_API_HASH }}
           PASSWORD:         ${{ github.event.inputs.password }}
         run: |
           python3 - << 'EOF'
