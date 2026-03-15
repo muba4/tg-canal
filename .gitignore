@@ -7,3 +7,8 @@ docs/data/comments/
 .idea/
 
 .env
+.env.example
+
+# Local session generation scripts (contain sensitive logic/config)
+scripts/generate_session_step1_local.py
+scripts/generate_session_step2_local.py
