@@ -45,6 +45,7 @@ REPO_ROOT    = Path(__file__).parent.parent
 DATA_FILE    = REPO_ROOT / "docs" / "data" / "posts.json"
 COMMENTS_DIR = REPO_ROOT / "docs" / "data" / "comments"
 DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+print("[DEBUG MARKER] scrape_to_json.py started executing")
 
 BASE_URL    = f"https://t.me/s/{CHANNEL}"
 HEADERS     = {
