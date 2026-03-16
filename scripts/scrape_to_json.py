@@ -3,8 +3,8 @@ Scraper: parses the public Telegram channel page t.me/s/{channel}
 No API keys, no session, no authentication needed — works for any public channel.
 
 Environment variables (optional GitHub Secrets):
-  TELEGRAM_CHANNEL         – channel username without @ (default: mb4ru)
-  TELEGRAM_COMMENTS_GROUP  – linked discussion group username (default: mb4rr)
+  TELEGRAM_CHANNEL         – channel username without @ (default: loaderfromSVO)
+  TELEGRAM_COMMENTS_GROUP  – linked discussion group username (default: loaderfromSVOchat)
   MESSAGES_LIMIT           – how many latest messages to keep (default: 100)
   TELEGRAM_API_ID          – Telegram API id (for comments via Telethon)
   TELEGRAM_API_HASH        – Telegram API hash (for comments via Telethon)
@@ -24,17 +24,8 @@ from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 from html.parser import HTMLParser
 
-#logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-#log = logging.getLogger(__name__)
-# --- DISABLE LOGGING OUTPUT (for GitHub Actions) ---
-import logging
-# Disable all log output by setting level to CRITICAL and adding a null handler
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
-log.setLevel(logging.CRITICAL)  # or logging.ERROR if you still want errors (but we’ll suppress them too)
-# Add NullHandler to prevent "No handlers could be found" warning
-log.addHandler(logging.NullHandler())
-# --- END DISABLE LOGGING ---
-
 
 CHANNEL         = os.getenv("TELEGRAM_CHANNEL", "mb4ru")
 COMMENTS_GROUP  = os.getenv("TELEGRAM_COMMENTS_GROUP", "mb4rr")
@@ -45,7 +36,6 @@ REPO_ROOT    = Path(__file__).parent.parent
 DATA_FILE    = REPO_ROOT / "docs" / "data" / "posts.json"
 COMMENTS_DIR = REPO_ROOT / "docs" / "data" / "comments"
 DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
-print("[DEBUG MARKER] scrape_to_json.py started executing")
 
 BASE_URL    = f"https://t.me/s/{CHANNEL}"
 HEADERS     = {
@@ -255,12 +245,12 @@ async def _fetch_comments_telethon(post_ids: list) -> dict:
                     })
 
                 results[post_id] = comments
-                #log.info(f"Telethon: {len(comments)} comments for post {post_id}")
+                log.info(f"Telethon: {len(comments)} comments for post {post_id}")
 
             except (MsgIdInvalidError, ChannelPrivateError):
                 results[post_id] = []
             except Exception as e:
-                #log.warning(f"Telethon: failed for post {post_id}: {e}")
+                log.warning(f"Telethon: failed for post {post_id}: {e}")
                 results[post_id] = []
 
             await asyncio.sleep(0.3)
@@ -317,12 +307,12 @@ def parse_comments_regex(html: str, skip_id: int | None = None) -> list[dict]:
 def fetch_comments(group_username: str, thread_id: int) -> list[dict]:
     """Fetch comments for a thread from a public Telegram discussion group."""
     url = f"https://t.me/s/{group_username}?thread={thread_id}"
-    #log.info(f"Fetching comments: {url}")
+    log.info(f"Fetching comments: {url}")
     try:
         html = fetch_page(url)
         return parse_comments_regex(html, skip_id=thread_id)
     except Exception as e:
-        #log.warning(f"Failed to fetch comments for {group_username}/thread/{thread_id}: {e}")
+        log.warning(f"Failed to fetch comments for {group_username}/thread/{thread_id}: {e}")
         return []
 
 
@@ -476,7 +466,7 @@ def load_existing() -> dict:
 def save(data: dict):
     data["updated_at"] = datetime.now(timezone.utc).isoformat()
     DATA_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), "utf-8")
-    #log.info(f"Saved {len(data['posts'])} posts → {DATA_FILE}")
+    log.info(f"Saved {len(data['posts'])} posts → {DATA_FILE}")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -491,18 +481,18 @@ def main():
 
     while total_fetched < LIMIT:
         url = BASE_URL if before_id is None else f"{BASE_URL}?before={before_id}"
-        #log.info(f"Fetching {url}")
+        log.info(f"Fetching {url}")
         try:
             html = fetch_page(url)
         except Exception as e:
-            #log.error(f"Failed to fetch page: {e}")
+            log.error(f"Failed to fetch page: {e}")
             break
 
         page_posts = parse_posts_regex(html)
-        #log.info(f"Parsed {len(page_posts)} posts from page")
+        log.info(f"Parsed {len(page_posts)} posts from page")
 
         if not page_posts:
-            #log.info("No posts found on page, stopping.")
+            log.info("No posts found on page, stopping.")
             break
 
         for p in page_posts:
@@ -514,7 +504,7 @@ def main():
 
         if len(page_posts) < 5:
             # Likely reached the beginning of the channel
-            #log.info("Too few posts on page, stopping pagination.")
+            log.info("Too few posts on page, stopping pagination.")
             break
 
         time.sleep(1)  # be polite to Telegram servers
@@ -525,12 +515,12 @@ def main():
         min_fetched = min(fetched_ids)
         deleted = [pid for pid in list(merged) if pid >= min_fetched and pid not in fetched_ids]
         for pid in deleted:
-            #log.info(f"Removing deleted post {pid}")
+            log.info(f"Removing deleted post {pid}")
             del merged[pid]
 
     all_sorted = sorted(merged.values(), key=lambda p: p.get("date") or "", reverse=True)
     data["posts"] = all_sorted[:LIMIT]
-    #log.info(f"Total unique posts collected: {len(merged)}, saving top {len(data['posts'])}")
+    log.info(f"Total unique posts collected: {len(merged)}, saving top {len(data['posts'])}")
     save(data)
 
     # ── Comments ──────────────────────────────────────────────────────────────
@@ -542,7 +532,7 @@ def main():
         try:
             if int(f.stem) not in active_ids:
                 f.unlink()
-                #log.info(f"Deleted orphaned comments file: {f.name}")
+                log.info(f"Deleted orphaned comments file: {f.name}")
         except Exception:
             pass
 
@@ -574,6 +564,7 @@ def main():
             log.error(f"Telethon comments scraping failed (posts already saved): {e}")
     else:
         log.info("Telethon credentials not set — skipping comments scraping")
+
 
 if __name__ == "__main__":
     main()
