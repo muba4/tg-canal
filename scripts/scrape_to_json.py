@@ -480,10 +480,6 @@ def save(data: dict):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
-    print("API ID:", bool(os.environ.get("TELEGRAM_API_ID")))
-    print("API HASH:", bool(os.environ.get("TELEGRAM_API_HASH")))
-    print("SESSION STR:", bool(os.environ.get("TELEGRAM_SESSION_STR")))
-    print("All set:", all(os.environ.get(k) for k in ("TELEGRAM_API_ID", "TELEGRAM_API_HASH", "TELEGRAM_SESSION_STR")))
     data   = load_existing()
     merged = {p["id"]: p for p in data["posts"]}
 
@@ -557,7 +553,7 @@ def main():
             p["id"] for p in recent_posts
             if not (COMMENTS_DIR / f"{p['id']}.json").exists()
         ]
-        #log.info(f"Fetching comments for {len(post_ids)} posts (skipping {len(recent_posts) - len(post_ids)} cached, limiting to {COMMENTS_LIMIT} most recent)")
+        log.info(f"Fetching comments for {len(post_ids)} posts (skipping {len(recent_posts) - len(post_ids)} cached, limiting to {COMMENTS_LIMIT} most recent)")
         try:
             all_comments = asyncio.run(_fetch_comments_telethon(post_ids))
             for post in recent_posts:
@@ -574,10 +570,10 @@ def main():
                     json.dumps(out, ensure_ascii=False, indent=2), "utf-8"
                 )
         except Exception as e:
-            #log.error(f"Telethon comments scraping failed (posts already saved): {e}")
+            log.error(f"Telethon comments scraping failed (posts already saved): {e}")
             pass
     else:
-        #log.info("Telethon credentials not set — skipping comments scraping")
+        log.info("Telethon credentials not set — skipping comments scraping")
         pass
 
 
