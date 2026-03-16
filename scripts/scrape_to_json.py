@@ -480,6 +480,10 @@ def save(data: dict):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
+    print("API ID:", bool(os.environ.get("TELEGRAM_API_ID")))
+    print("API HASH:", bool(os.environ.get("TELEGRAM_API_HASH")))
+    print("SESSION STR:", bool(os.environ.get("TELEGRAM_SESSION_STR")))
+    print("All set:", all(os.environ.get(k) for k in ("TELEGRAM_API_ID", "TELEGRAM_API_HASH", "TELE_SESSION_STR")))
     data   = load_existing()
     merged = {p["id"]: p for p in data["posts"]}
 
