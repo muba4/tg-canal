@@ -540,11 +540,13 @@ def main():
     if all(os.environ.get(k) for k in ("TELEGRAM_API_ID", "TELEGRAM_API_HASH", "TELEGRAM_SESSION_STR")):
         # Only fetch comments for the most recent COMMENTS_LIMIT posts
         recent_posts = data["posts"][:COMMENTS_LIMIT]
-        post_ids = [
-            p["id"] for p in recent_posts
-            if not (COMMENTS_DIR / f"{p['id']}.json").exists()
-        ]
-        log.info(f"Fetching comments for {len(post_ids)} posts (skipping {len(recent_posts) - len(post_ids)} cached, limiting to {COMMENTS_LIMIT} most recent)")
+#         post_ids = [
+#             p["id"] for p in recent_posts
+#             if not (COMMENTS_DIR / f"{p['id']}.json").exists()
+#         ]
+        # --- Изменение: всегда перезаписываем файлы для всех recent_posts ---
+        post_ids = [p["id"] for p in recent_posts] # <-- Убрана проверка на существование файла
+        #log.info(f"Fetching comments for {len(post_ids)} posts (skipping {len(recent_posts) - len(post_ids)} cached, limiting to {COMMENTS_LIMIT} most recent)")
         try:
             all_comments = asyncio.run(_fetch_comments_telethon(post_ids))
             for post in recent_posts:
