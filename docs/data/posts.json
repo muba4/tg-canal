@@ -1,11 +1,26 @@
 {
   "posts": [
     {
+      "id": 767,
+      "text": "🌕⚠️ КОСМОКОТИКИ, ОСТОРОЖНО: ВАШЕ МЕСТОПОЛОЖЕНИЕ — НЕ СЕКРЕТ! ⚠️🐾\n\nВы думаете, что просто ставите геотег «у кофейни на углу»?\nНет. Вы — как маяк для всех, кто хочет знать: «Где сейчас кот с Лунной Базы?» 🗺️🐱\n\n😺 Хотите добавить или изменить место в уже опубликованном посте Instagram?\n→ Откройте пост → «Редактировать» → «Добавить место» → Готово!\n→ А ещё можно удалить геотег — если передумали быть маяком.\n\n🔥 Но помните:\n→ Чем точнее геолокация — тем проще вас найти.\n→ Не всем нужны ваши цветы… некоторым хочется кинуть камень.\n\n✅ Лучше перенесите активность туда, где всё легально и безопасно:\n→ VK Клипы и Stories\n→ Telegram-каналы с ботами для сторис\n→ Яндекс.Эфир и Zen\n→ Rutube и My World\n\nНе превращайте свою популярность в ловушку!\nЛучше быть известным — чем найденным.\n\n🔗 Как управлять геотегами (и стоит ли?):\nhttps://mb4.ru/social-network/instagram/1650-location-of-an-existing-instagram-post.html\n\n#КосмоКотики #ЛуннаяБаза #БезСлежки 🚀🐱🔒",
+      "text_html": "🌕⚠️ КОСМОКОТИКИ, ОСТОРОЖНО: ВАШЕ МЕСТОПОЛОЖЕНИЕ — НЕ СЕКРЕТ! ⚠️🐾<br><br>Вы думаете, что просто ставите геотег «у кофейни на углу»?<br>Нет. Вы — как маяк для всех, кто хочет знать: «Где сейчас кот с Лунной Базы?» 🗺️🐱<br><br>😺 Хотите добавить или изменить место в уже опубликованном посте Instagram?<br>→ Откройте пост → «Редактировать» → «Добавить место» → Готово!<br>→ А ещё можно удалить геотег — если передумали быть маяком.<br><br>🔥 Но помните:<br>→ Чем точнее геолокация — тем проще вас найти.<br>→ Не всем нужны ваши цветы… некоторым хочется кинуть камень.<br><br>✅ Лучше перенесите активность туда, где всё легально и безопасно:<br>→ VK Клипы и Stories<br>→ Telegram-каналы с ботами для сторис<br>→ Яндекс.Эфир и Zen<br>→ Rutube и My World<br><br>Не превращайте свою популярность в ловушку!<br>Лучше быть известным — чем найденным.<br><br>🔗 Как управлять геотегами (и стоит ли?):<br><a href=\"https://mb4.ru/social-network/instagram/1650-location-of-an-existing-instagram-post.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://mb4.ru/social-network/instagram/1650-location-of-an-existing-instagram-post.html</a><br><br>#КосмоКотики #ЛуннаяБаза #БезСлежки 🚀🐱🔒",
+      "date": "2026-05-01T11:58:07+00:00",
+      "views": 2,
+      "forwards": 0,
+      "photos": [
+        "https://cdn4.telesco.pe/file/DDidnJwqda_lSaxthjbh6Ix178vGkyDO6If15CJBYj2nFIWKXckvOC5rz5Q-_flxAgOM-kw-gq1-0ypGoIns5lTTAm1TGFl-tH-iK22KdvB5VRl9X6vqCj6FsKupD9Uee8wX12pdr0JLwQYo6xQQeVitI_dzoW8_ouz9ZzJvsdHOlb4KtVAs6IP5MrLgpRTFLz6XoLTY6_QSRJ-Z-MBVBYFIDMRhiI21Nz7jfK3-a5W5eWvH3vBQIW962ANAtRTch4yuH0K1Bm_Y9LZKBIpOgTHsLoz6-NYy_noWm_H8dhBDa6bRdV7Dq88l-iyVma2HfdcRBJC0CRFCiPWG3hYtzw.jpg"
+      ],
+      "video_path": null,
+      "gif_path": null,
+      "has_video": false,
+      "comments_url": null
+    },
+    {
       "id": 766,
       "text": "😺🚀 КОСМОКОТИКИ, ВАША ЛУННАЯ РАЗРАБОТКА — НА СТАРТЕ! 🚀😺\n\nЗабудьте про «а вдруг сломается PHP» и «почему MySQL не запускается».\n\nLaravel Homestead — это готовая космическая станция с Nginx, PHP 5.6–8.0, MySQL, Redis, Mailhog, Xdebug и даже MinIO!\n\n😺 Хотите переключать версии PHP, как переключаете кофе на чай?\n→ Просто укажите php: \"7.4\" в Homestead.yaml — и сайт заработает на нужной версии!\n\n😺 Нужен MongoDB, Elasticsearch или Neo4j?\n→ Добавьте одну строчку в конфиг — и они уже ждут вас в виртуалке.\n\n😺 Хотите отлаживать код по шагам, как кот преследует лазерную точку?\n→ Xdebug уже включён! Просто подключите IDE — и вперёд.\n\n😺 А ещё:\n→ Blackfire и XHGui покажут, где ваш код тормозит — быстрее, чем кот убегает от ванны!\n\n🔥 Homestead — это не просто окружение.\nЭто ваш личный галактический док, где всё работает, ничего не ломается, а проекты взлетают сами.\n\n🔗 Узнайте, как за 10 минут развернуть идеальную среду для Laravel:\nhttps://mb4.ru/laravel8-getting-started-ru/homestead.html  🚀🐱💻",
       "text_html": "😺🚀 КОСМОКОТИКИ, ВАША ЛУННАЯ РАЗРАБОТКА — НА СТАРТЕ! 🚀😺<br><br>Забудьте про «а вдруг сломается PHP» и «почему MySQL не запускается».<br><br>Laravel Homestead — это готовая космическая станция с Nginx, PHP 5.6–8.0, MySQL, Redis, Mailhog, Xdebug и даже MinIO!<br><br>😺 Хотите переключать версии PHP, как переключаете кофе на чай?<br>→ Просто укажите php: \"7.4\" в Homestead.yaml — и сайт заработает на нужной версии!<br><br>😺 Нужен MongoDB, Elasticsearch или Neo4j?<br>→ Добавьте одну строчку в конфиг — и они уже ждут вас в виртуалке.<br><br>😺 Хотите отлаживать код по шагам, как кот преследует лазерную точку?<br>→ Xdebug уже включён! Просто подключите IDE — и вперёд.<br><br>😺 А ещё:<br>→ Blackfire и XHGui покажут, где ваш код тормозит — быстрее, чем кот убегает от ванны!<br><br>🔥 Homestead — это не просто окружение.<br>Это ваш личный галактический док, где всё работает, ничего не ломается, а проекты взлетают сами.<br><br>🔗 Узнайте, как за 10 минут развернуть идеальную среду для Laravel:<br><a href=\"https://mb4.ru/laravel8-getting-started-ru/homestead.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://mb4.ru/laravel8-getting-started-ru/homestead.html</a>  🚀🐱💻",
       "date": "2026-04-23T13:40:12+00:00",
-      "views": 7,
+      "views": 9,
       "forwards": 0,
       "photos": [
         "https://cdn4.telesco.pe/file/Z2TCpX63q3HlWl6ZhmlARGbVpIQcrmPrWB4wPV-RwiAyaEba2J26_KYv81tx8YpMN43y7vURdONaQZ5IBVAMnEEveHBpdpA3c0EexsF9dX_3WO1H3ChlSiWWsj86hyAanCFg5YEDg8Hx9fuqQ9w_9kYmGAtlATDXXm5pkOomm7sPvVeNKDzng7xxxkKtpWElPTMZLMGgPfe9iRPCzVTg0r0OagYJSkvI8jS8RnT7GX86P1TlQA2PdsyQJy8y6w8sdspMfg6xBeiSckt6s2ORGdkumVYpfobA31IJCO7SrvZpK70-gtS3jCu2K1IKME6r3IuVrJLq3Y2fmSwHWl57LA.jpg"
@@ -95,7 +110,7 @@
       "text": "🌌🐾 КОСМОКОТИКИ, ВНИМАНИЕ! 🐾🌌\n\nВы всё ещё пишете SQL-запросы как в каменном веке?\n\nYii2 Active Record говорит: «Держи объекты, а не строки!» 💥\n\n😺 Класс = таблица\n😺 Объект = строка\n😺 Атрибут = столбец\n→ Просто как кофе по утрам! ☕\n\n🔥 А ещё:\n→ Поддерживает все базы: MySQL, PostgreSQL, MongoDB, Redis и даже Sphinx!\n→ Связи между таблицами — как диалог кота с астронавтом:\n$customer->orders — и вот уже массив заказов!\n→ Жизненные циклы — объекты рождаются, живут и умирают с событиями!\n→ Транзакции — чтобы ваши данные не потерялись в чёрной дыре!\n→ Оптимистическая блокировка — чтобы два кота не сохранили одно и то же!\n\n💡 Active Record — это не магия. Это наука.\n\nНо такая, что даже ваш кот сможет понять (если дать ему кофе).\n\n🔗 Узнайте, как превратить базу данных в объектную вселенную:\nhttps://mb4.ru/yii2-db/active-record.html",
       "text_html": "🌌🐾 КОСМОКОТИКИ, ВНИМАНИЕ! 🐾🌌<br><br>Вы всё ещё пишете SQL-запросы как в каменном веке?<br><br>Yii2 Active Record говорит: «Держи объекты, а не строки!» 💥<br><br>😺 Класс = таблица<br>😺 Объект = строка<br>😺 Атрибут = столбец<br>→ Просто как кофе по утрам! ☕<br><br>🔥 А ещё:<br>→ Поддерживает все базы: MySQL, PostgreSQL, MongoDB, Redis и даже Sphinx!<br>→ Связи между таблицами — как диалог кота с астронавтом:<br>$customer->orders — и вот уже массив заказов!<br>→ Жизненные циклы — объекты рождаются, живут и умирают с событиями!<br>→ Транзакции — чтобы ваши данные не потерялись в чёрной дыре!<br>→ Оптимистическая блокировка — чтобы два кота не сохранили одно и то же!<br><br>💡 Active Record — это не магия. Это наука.<br><br>Но такая, что даже ваш кот сможет понять (если дать ему кофе).<br><br>🔗 Узнайте, как превратить базу данных в объектную вселенную:<br><a href=\"https://mb4.ru/yii2-db/active-record.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://mb4.ru/yii2-db/active-record.html</a>",
       "date": "2026-03-12T17:26:09+00:00",
-      "views": 17,
+      "views": 18,
       "forwards": 0,
       "photos": [
         "https://cdn4.telesco.pe/file/ersHiQTBSxNOr1ZQVmGVmUtA-cW8osh5--tU7NmT53iYwMBbTMa8AkJnNNVOhlo8EmLTB4Msa6_QOfzcad-rPk3njaAnp4ufmb8SyQEDiTd3vYMaP1nybS6CWhhiZcohLUvIAZcFMQJAqv8Obr04sSSCu8GRU2W34Rtz1WlGDiRoxMXflFvUJlpWOaUFLUmylRBnYMkRrynfoxv9nhh7sEzP5lLi7iOoV1dOuFwNBpAxPOlVOBnNq80YyAZvuWRqsoArWdgpoR9RYBbiYm3bK0KG69xX039ahXzOrZud4HOIT79XCCcBGXqiTfaIFcQyWvcLtp_fILUuSFy5nssR-Q.jpg"
@@ -9136,6 +9151,6 @@
       "comments_url": null
     }
   ],
-  "updated_at": "2026-05-01T10:53:58.015639+00:00",
+  "updated_at": "2026-05-01T12:02:58.898397+00:00",
   "channel": "mb4ru"
 }
